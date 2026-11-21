@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dynamic Route | SmartTraffic</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+</head>
+<body>
+<header class="navbar">
+  <a class="brand" href="index.html"><span class="traffic-icon">🚦</span><span><b>SmartTraffic</b><small>DYNAMIC ROUTE OPTIMIZATION</small></span></a>
+  <nav>
+    <a href="index.html">Home</a><a href="dashboard.html">Dashboard</a><a class="active" href="route.html">Dynamic Route</a><a href="traffic.html">Traffic</a><a href="analytics.html">Analytics</a><a href="incidents.html">Incidents</a><a href="admin.html">Admin</a>
+  </nav>
+</header>
+
+<main class="page">
+  <div class="page-title"><div><span class="eyebrow">REAL ROAD NETWORK</span><h1>Find the Best Route</h1><p>Compare real driving routes using distance, travel time and an estimated congestion score.</p></div></div>
+
+  <section class="route-form panel">
+    <div class="field"><label for="start">Starting Location</label><input id="start" value="Chennai Central" placeholder="Example: Chennai Central"></div>
+    <div class="field"><label for="destination">Destination</label><input id="destination" value="Saveetha Engineering College" placeholder="Example: Saveetha Engineering College"></div>
+    <div class="field"><label for="vehicle">Vehicle Type</label><select id="vehicle"><option value="car">Car</option><option value="bike">Bike</option></select></div>
+    <div class="field"><label for="preference">Preference</label><select id="preference"><option value="balanced">Balanced</option><option value="fastest">Fastest</option><option value="shortest">Shortest</option><option value="lowtraffic">Lowest Congestion</option></select></div>
+    <button id="findRoute" class="btn primary">Find Best Route</button>
+  </section>
+
+  <div id="routeMessage" class="message hidden"></div>
+
+  <section class="route-grid">
+    <div class="panel">
+      <div class="panel-head"><h2>Route Comparison</h2><span id="networkStatus">Real road network</span></div>
+      <div id="routeResults"><div class="empty">Enter two locations and click <b>Find Best Route</b>.</div></div>
+    </div>
+    <div class="panel">
+      <div class="panel-head"><h2>Route Map</h2><span>Interactive map</span></div>
+      <div id="map"></div>
+      <div class="map-note">Map © OpenStreetMap contributors. Routing by OSRM.</div>
+    </div>
+  </section>
+
+  <section id="routeDetails" class="panel hidden">
+    <div class="panel-head"><h2>Recommended Route Details</h2></div>
+    <div id="details"></div>
+  </section>
+</main>
+<footer>SmartTraffic • Real road routing prototype • OpenStreetMap data © contributors</footer>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script src="js/route.js"></script>
+</body>
+</html>
